@@ -202,7 +202,7 @@ post "/lists/:id/complete_all" do
   @list_id = params[:id].to_i
   @list = load_list(@list_id)
 
-  @storage.mark_all_todos_as_completed(list_id)
+  @storage.mark_all_todos_as_completed(@list_id)
 
   session[:success] = "All todos have been completed."
   redirect "/lists/#{@list_id}"
